@@ -1,4 +1,7 @@
 
+trigger:
+- '*'
+
 jobs:
 - deployment: VMDeploy
   displayName: Deploy to VM
@@ -7,8 +10,7 @@ jobs:
    resourceName: codespaces-a518c8
    resourceType: virtualMachine
 
-trigger:
-- '*'
+
 
 pool:
   name: 'Default' # Replace Default with the name of your agent pool if you used a different pool
@@ -16,9 +18,3 @@ pool:
 variables:
   buildConfiguration: 'Release'
 
-steps:
-- task: UseDotNet@2
-  displayName: 'Use .NET SDK 6.x'
-  inputs:
-    packageType: sdk
-    version: '6.x'
