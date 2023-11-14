@@ -1,3 +1,17 @@
+
+jobs:
+- deployment: VMDeploy
+  displayName: Deploy to VM
+  environment: 
+   name: Test
+   resourceName: codespaces-a518c8
+   resourceType: virtualMachine
+  strategy:
+     runOnce:
+        deploy:   
+          steps:
+            - script: echo "Hello world"
+
 trigger:
 - '*'
 
